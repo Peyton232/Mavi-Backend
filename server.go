@@ -9,11 +9,13 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/Peyton232/Mavi-Backend/graph"
 	"github.com/Peyton232/Mavi-Backend/graph/generated"
+	"github.com/joho/godotenv"
 )
 
 const defaultPort = "8080"
 
 func main() {
+	godotenv.Load()
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort
