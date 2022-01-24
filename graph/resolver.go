@@ -1,9 +1,11 @@
 package graph
 
 import (
+	"log"
 	"os"
 
 	"github.com/Peyton232/Mavi-Backend/database"
+	"github.com/joho/godotenv"
 )
 
 // This file will not be regenerated automatically.
@@ -12,4 +14,18 @@ import (
 
 type Resolver struct{}
 
-var db = database.Connect(os.Getenv("MONGODB_URI"), os.Getenv("MONGODB_NAME"))
+var db = database.Connect(goDotEnvVariable("MONGODB_URI"), goDotEnvVariable("MONGODB_NAME"))
+
+// use godot package to load/read the .env file and
+// return the value of the key
+func goDotEnvVariable(key string) string {
+
+	// load .env file
+	err := godotenv.Load("../.env")
+
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
+
+	return os.Getenv(key)
+}
