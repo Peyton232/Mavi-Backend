@@ -11,12 +11,19 @@ import (
 	"github.com/Peyton232/Mavi-Backend/graph/model"
 )
 
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
+func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (*model.User, error) {
 	panic(fmt.Errorf("not implemented"))
-	//db.createNewTodo(input)
 }
 
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
+func (r *mutationResolver) RemoveUser(ctx context.Context, userid string) (*model.User, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) AllUsers(ctx context.Context) ([]*model.User, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) UserByID(ctx context.Context, userID string) (*model.User, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 

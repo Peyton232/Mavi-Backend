@@ -12,7 +12,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-const defaultPort = "8080"
+const defaultPort = "9090"
 
 func main() {
 	godotenv.Load()
